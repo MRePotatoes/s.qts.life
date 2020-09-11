@@ -1,0 +1,78 @@
+html 
+{
+    padding-top: 5px;
+    padding-left: 10px;
+    background-color: rgb(41, 52, 54);
+    font-family: 'Segoe UI';
+    font-size: 20px;
+    color: white;
+}
+
+body
+{
+    padding-top: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 5px;
+    margin-left: 0px;
+    margin-top: 0px;
+    background-color: rgb(26, 33, 34);
+}
+
+.header 
+{
+    width: 50%;
+    height: 100px;
+    background-color: rgb(18, 23, 24);
+    padding-left: 10px;
+    text-align: center;
+    align-self: center;
+}
+
+.header>h1
+{
+    margin-bottom: 0px;
+}
+
+.header>p
+{
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.sidebar
+{
+    padding-left: 10px;
+    padding-right: 10px;
+    width: calc(20% - 20px);
+    height: 300px;
+    float: left;
+    background-color: rgb(15, 17, 19);
+}
+
+.content
+{
+    padding-left: 10px;
+    padding-right: 10px;
+    width: calc(80% - 20px);
+    height: 300px;
+    float: left;
+    background-color: rgb(36, 46, 48);
+}
+
+.footer
+{
+    
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color:rgb(8, 10, 10)
+}
+
+img.emoji 
+{
+    height: 1em;
+    width: 1em;
+    margin: 0 .05em 0 .1em;
+    vertical-align: -0.1em;
+}

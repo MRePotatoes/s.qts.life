@@ -1,0 +1,132 @@
+<html>
+    <head>
+        <title>w1</title>
+        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha384-/LjQZzcpTzaYn7qWqRIWYC5l8FWEZ2bIHIz0D73Uzba4pShEcdLdZyZkI4Kv676E" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="s.css" />
+    </head>
+    <body>
+        <h1>stuff!</h1>
+        <div id = "switcharoo">
+            <h2>Selecteur de paragraphes</h2>
+
+            <p id="w">pog</p>
+
+            <p id="ok">wwwwwww</p>
+
+            <p>im so cool</p>
+
+            <p id="output">> X = X.innerHTML</p>
+            <button type="button" onclick="sw()">switcharoo</button> :)
+        </div>
+
+        <hr>
+        
+        <div id = "children">
+            <h2>Selecteur de paragraphes a l'interieur d'un autre élément</h2>
+
+            <div id = "s1">
+                <p>s1a: Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, minima. Architecto quam libero quod quisquam natus? Blanditiis iusto, porro pariatur earum facilis velit. Vero illum minus non necessitatibus nesciunt animi!</p>
+                <p>s1b: Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste vero nisi omnis voluptas repellat incidunt unde rerum, aut id sunt, at labore eaque corporis? Minima minus dolorem voluptatum possimus dolor.</p>
+                <p>s1c: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores provident mollitia iusto tempore, recusandae saepe commodi enim sed blanditiis, maiores quae rem non expedita nostrum ut ad hic doloribus? Dolorum!</p>
+            </div>
+            <div id = "s2">
+                <p>s2a: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium quo aliquid, neque impedit nam perferendis, laboriosam doloremque ea laborum voluptas harum, quasi ducimus vitae voluptatum reiciendis eveniet distinctio asperiores similique?</p>
+                <p>s2b: Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni recusandae officia possimus doloremque omnis eveniet iste sed, commodi temporibus dolorum accusantium necessitatibus odio est sunt facilis molestias doloribus quam velit!</p>
+                <p>s2c: Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita a, consectetur iure doloribus ad, esse qui voluptatem architecto quibusdam dolores nihil aliquid sapiente minima, odit possimus tempora nemo. Pariatur, perferendis.</p>
+            </div>
+
+            <p id="output">&gt ~</p>
+            <p id="output">&gt ~</p>
+        </div>
+
+        <hr>
+
+        <div id = "animation">
+            <h2>Animation</h2>
+
+            <h3>Javascript</h3>
+
+            <div id = "js">
+                <div id = "container">
+                    <div id="box" onmouseover="onOver(this)" onmouseout="onOut(this)"></div>
+                </div>
+            </div>
+            <p id = "output">Score: 0</p>
+        </div>
+
+        <script>
+            // Paragraph switcharoo!
+            var para = 0
+            function sw()
+            {
+                var elements = $('#switcharoo > p')
+                var output = $('#switcharoo > #output')[0]
+                if (elements[para] == output)
+                {
+                    para += 1
+                }
+
+                if (!elements[para])
+                {
+                    para = 0
+                }
+                output.innerHTML = '&gt '+para+' = '+elements[para].innerHTML
+                para += 1
+            }
+            
+            // Find children of elements
+            var children1 = 0, children2 = 0
+            function psw()
+            {
+                // $('#children > #output')[0].innerHTML = "&gt "+$('#children > #s1 > p')[1].innerHTML
+                var s1 = $('#children > #s1 > p'), s2 = $('#children > #s2 > p')
+                if (!s1[children1]) 
+                {
+                    children1 = 0
+                }
+                if (!s2[children2])
+                {
+                    children2 = 0
+                }
+
+                $('#children > #output')[0].innerHTML = "&gt "+s1[children1].innerHTML
+                $('#children > #output')[1].innerHTML = "&gt "+s2[children2].innerHTML
+
+                children1 += 1
+                children2 += 1
+            }
+            setInterval(psw, 1000)
+
+            // JS animation
+            var step = 0
+            var score = 0
+            var JSbox = $('#js>#container>#box')[0]
+            var ScoreOutput = $('#animation > #output')[0]
+            var ovr = false
+            function runAnim()
+            {
+                step += 1/60
+                if (ovr)
+                {
+                    score += 1/60
+                }
+                JSbox.style.top = (Math.sin(step)*(350/2)+(350/2))+'px'
+                JSbox.style.left = (Math.cos(step)*(350/2)+(350/2))+'px'
+                ScoreOutput.innerHTML = "Score: "+Math.floor(score) 
+            }
+            setInterval(runAnim, 1000/60)
+
+            // Over & out
+            function onOver(elem)
+            {
+                ovr = true
+                elem.style["background-color"] = 'blue'
+            }
+            function onOut(elem)
+            {
+                ovr = false
+                elem.style["background-color"] = null
+            }
+        </script>
+    </body>
+</html>
