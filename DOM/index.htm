@@ -110,7 +110,7 @@
                 {
                     score += 1/60
                 }
-                JSbox.style.top = (Math.sin(step)*(350/2)+(350/2))+'px'
+                JSbox.style.top = (Math.sin(step*2)*(350/2)+(350/2))+'px'
                 JSbox.style.left = (Math.cos(step)*(350/2)+(350/2))+'px'
                 ScoreOutput.innerHTML = "Score: "+Math.floor(score) 
             }
