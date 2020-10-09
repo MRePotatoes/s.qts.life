@@ -47,7 +47,7 @@ function u(t)
 
     x.fillStyle=R()
     x.font='300px a';
-    x.fillText('🐱',750,S(t*2)*20+630);
+    x.fillText('☕',750,S(t*2)*20+630); // fuck cats, all my homies hate cats
 }
 
 reload()
