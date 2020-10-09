@@ -25,6 +25,7 @@ function reload()
 {
     clearInterval(Interval)
     c.height = 1080
+    Time = 0
     Interval = setInterval(draw, 1000/60)
 }
 
