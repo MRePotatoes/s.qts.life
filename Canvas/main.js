@@ -28,6 +28,8 @@ function reload()
     Interval = setInterval(draw, 1000/60)
 }
 
+var cofiImg = new Image()
+cofiImg.src = "https://i.qts.life/res/java.png"
 function u(t)
 {
     c.height = 1080
@@ -45,9 +47,10 @@ function u(t)
     x.lineWidth = 10
     x.stroke()
 
-    x.fillStyle=R()
-    x.font='300px a';
-    x.fillText('☕',750,S(t*2)*20+630); // fuck cats, all my homies hate cats
+    x.drawImage(cofiImg, 760, S(t*2)*20+350, 400, 400)
+    //x.fillStyle=R()
+    //x.font='300px a';
+    //x.fillText('☕',750,S(t*2)*20+630); // fuck cats, all my homies hate cats
 }
 
 reload()
